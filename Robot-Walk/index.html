@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>Command Runner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ฝั่งซ้าย -->
+  <div class="left-panel">
+    <label for="commands">ป้อนคำสั่ง:</label>
+    <textarea id="commands" placeholder="เช่น WWLWRWW"></textarea>
+    <button onclick="runCommands()">คำนวณ</button>
+  </div>
+
+  <!-- ฝั่งขวา -->
+  <div class="right-panel">
+    <canvas id="canvas" width="300" height="300"></canvas>
+    <div id="output"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
