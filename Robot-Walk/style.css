@@ -58,8 +58,6 @@ body {
 
 .input-section button:hover {
     background-color: #0056b3; /* สีน้ำเงินเข้มขึ้นเมื่อ hover */
-    width: 50%;
-    height: 50%;
 }
 
 .output-section {
