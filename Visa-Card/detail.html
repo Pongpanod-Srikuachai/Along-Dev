@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail of movements</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<div class="screen-container">
+    <header class="detail-header">
+        <div class="header" style="background: none;">
+            <a href="index.html" class="header-icon" style="color: #fff;"><i class="fas fa-arrow-left"></i></a>
+            <span class="header-icon" style="color: #fff;"><i class="fas fa-camera"></i></span>
+        </div>
+        <div class="detail-balance">
+            <div class="detail-balance-label">Available Balance</div>
+            <div class="detail-balance-amount">$ 7,392.00</div>
+        </div>
+    </header>
+
+    <main>
+        <section class="summary-container detail-summary">
+            <div class="summary-box">
+                <div class="summary-label">Income</div>
+                <div class="summary-amount income">
+                    <i class="fas fa-arrow-down"></i> $9,302.00
+                </div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-label">Expense</div>
+                <div class="summary-amount expense">
+                    <i class="fas fa-arrow-up"></i> $2,790.00
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="detail-movements-header">
+                <span>Detail of movements</span>
+                <select class="weekly-dropdown">
+                    <option>Weekly</option>
+                    <option>Monthly</option>
+                    <option>Yearly</option>
+                </select>
+            </div>
+            <ul class="transaction-list">
+                <li class="transaction-item">
+                    <div class="transaction-icon"><i class="fas fa-utensils"></i></div>
+                    <div class="transaction-details">
+                        <div class="transaction-name">Restaurant Manhattan</div>
+                        <div class="transaction-date">June 10, 2018</div>
+                    </div>
+                    <div class="transaction-amount amount-expense">$170 <i class="fas fa-arrow-up"></i></div>
+                </li>
+                <li class="transaction-item">
+                    <div class="transaction-icon"><i class="fas fa-briefcase"></i></div>
+                    <div class="transaction-details">
+                        <div class="transaction-name">Deposit Freelance</div>
+                        <div class="transaction-date">June 7, 2018</div>
+                    </div>
+                    <div class="transaction-amount amount-income">$800 <i class="fas fa-arrow-down"></i></div>
+                </li>
+                <li class="transaction-item">
+                    <div class="transaction-icon"><i class="fas fa-store"></i></div>
+                    <div class="transaction-details">
+                        <div class="transaction-name">Central Market</div>
+                        <div class="transaction-date">June 6, 2018</div>
+                    </div>
+                    <div class="transaction-amount amount-expense">$50 <i class="fas fa-arrow-up"></i></div>
+                </li>
+            </ul>
+        </section>
+    </main>
+</div>
+
+</body>
+</html>
