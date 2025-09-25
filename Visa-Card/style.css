@@ -18,9 +18,10 @@ body {
     border-radius: 40px;
     overflow: hidden;
     margin: 20px 0;
-    min-height: 844px; /* กำหนดความสูงเพื่อให้ดูเหมือนหน้าจอมือถือ */
+    min-height: 844px;
 }
 
+/* Header */
 .header {
     display: flex;
     justify-content: space-between;
