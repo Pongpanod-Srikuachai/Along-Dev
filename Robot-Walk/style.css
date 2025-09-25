@@ -1,77 +1,101 @@
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  height: 100vh;
-  box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding-right: 0px;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
 }
 
-/* กล่องฝั่งซ้าย */
-.left-panel {
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #ccc;
-  padding: 15px;
-  border-radius: 8px;
-  position: relative;
-  height: 300px;
+.container {
+    display: flex;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px
 }
 
-.left-panel label {
-  font-weight: bold;
-  margin-bottom: 8px;
+.input-section {
+    display: flex;
+    flex-direction: column;
+    padding-right: 20px;
+    /* ย้ายเส้นแบ่งมาอยู่ด้านขวาของส่วน input-section */
+    border-right: 1px solid #ddd; 
 }
 
-.left-panel textarea {
-  flex: 1;
-  resize: none;
-  padding: 10px;
-  font-size: 16px;
+.input-section h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 
-.left-panel button {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  padding: 8px 15px;
-  font-size: 16px;
-  background: #007bff;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+.input-section label {
+    margin-bottom: 5px;
 }
 
-.left-panel button:hover {
-  background: #0056b3;
+.input-section input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    width: 200px; /* กำหนดความกว้างเพื่อให้เหมือนในภาพ */
 }
 
-/* กล่องฝั่งขวา */
-.right-panel {
-  width: 55%;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 15px;
-  min-height: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+/* ปรับสไตล์ปุ่มให้เหมือนในภาพตัวอย่าง */
+.input-section button {
+    padding: 10px 15px;
+    background-color: darkblue; /* สีน้ำเงินเข้มขึ้นเล็กน้อยตามภาพ */
+    color: white;
+    border: none; /* ไม่มีเส้นขอบ */
+    border-radius: 4px; /* ขอบโค้งเล็กน้อย */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px; /* ขนาด font */
+    font-weight: bold; /* ตัวหนา */
+    box-shadow: none; /* ไม่มีเงาที่ปุ่ม */
 }
 
-#canvas {
-  border: 1px solid #000;
-  background: #f9f9f9;
-  display: none; /* เริ่มต้นยังไม่แสดง */
+.input-section button:hover {
+    background-color: #0056b3; /* สีน้ำเงินเข้มขึ้นเมื่อ hover */
 }
 
-#output {
-  margin-top: 15px;
-  font-size: 16px;
-  font-weight: bold;
-  display: none; /* เริ่มต้นยังไม่แสดง */
+.output-section {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.output-section h2 {
+    margin-top: 0;
+}
+
+.grid-container {
+    display: grid;
+    border: 1px solid #ccc;
+}
+
+.grid-cell {
+    width: 25px;
+    height: 25px;
+    border: 1px solid #e0e0e0;
+    box-sizing: border-box;
+}
+
+.path {
+    background-color: #c9c9c9;
+}
+
+.start {
+    background-color: #78d178;
+}
+
+.end {
+    background-color: #d17878;
+}
+
+/* Alpine.js: ซ่อนส่วนที่ยังไม่แสดงผลในช่วงแรก */
+[x-cloak] {
+    display: none !important;
 }

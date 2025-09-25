@@ -1,47 +1,91 @@
-function runCommands() {
-  const commands = document.getElementById("commands").value.trim().toUpperCase();
-  const canvas = document.getElementById("canvas");
-  const ctx = canvas.getContext("2d");
-  const output = document.getElementById("output");
+document.addEventListener('DOMContentLoaded', () => {
+    const commandsInput = document.getElementById('commands');
+    const calculateBtn = document.getElementById('calculate-btn');
+    const gridContainer = document.getElementById('grid');
+    const resultText = document.getElementById('result-text');
+    const currentPosition = document.getElementById('current-position');
 
-  if (!commands) {
-    alert("กรุณาป้อนคำสั่งก่อน");
-    return;
-  }
+    calculateBtn.addEventListener('click', () => {
+        const commands = commandsInput.value.toUpperCase();
+        if (commands.trim() === '') {
+            gridContainer.innerHTML = '';
+            resultText.style.display = 'none';
+            currentPosition.textContent = '';
+            return;
+        }
+      
+        resultText.style.display = 'block';
 
-  canvas.style.display = "block";
-  output.style.display = "block";
+        let x = 0;
+        let y = 0;
+        let direction = 0; // 0: Up (+Y), 1: Right (+X), 2: Down (-Y), 3: Left (-X)
+        const path = new Set(['0,0']);
 
-  // ล้าง canvas
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (const command of commands) {
+            switch (command) {
+                case 'L':
+                    direction = (direction - 1 + 4) % 4;
+                    break;
+                case 'R':
+                    direction = (direction + 1) % 4;
+                    break;
+                case 'W':
+                    switch (direction) {
+                        case 0: // Up
+                            y += 1;
+                            break;
+                        case 1: // Right
+                            x += 1;
+                            break;
+                        case 2: // Down
+                            y -= 1;
+                            break;
+                        case 3: // Left
+                            x -= 1;
+                            break;
+                    }
+                    path.add(`${x},${y}`);
+                    break;
+            }
+        }
 
-  // เริ่มต้นที่ (0,0) กลาง canvas
-  let x = canvas.width / 2;
-  let y = canvas.height / 2;
-  let dir = 0; // 0=บน,1=ขวา,2=ล่าง,3=ซ้าย
+        renderGrid(path, x, y);
+        currentPosition.textContent = `ตำแหน่งปัจจุบัน (${x}, ${y})`;
+    });
 
-  ctx.beginPath();
-  ctx.moveTo(x, y);
+    function renderGrid(path, finalX, finalY) {
+        gridContainer.innerHTML = '';
+        
+        // Define fixed grid dimensions
+        const rows = 8;
+        const cols = 9;
+        gridContainer.style.gridTemplateRows = `repeat(${rows}, 25px)`;
+        gridContainer.style.gridTemplateColumns = `repeat(${cols}, 25px)`;
 
-  for (let c of commands) {
-    if (c === "L") {
-      dir = (dir + 3) % 4;
-    } else if (c === "R") {
-      dir = (dir + 1) % 4;
-    } else if (c === "W") {
-      if (dir === 0) y -= 20;
-      else if (dir === 1) x += 20;
-      else if (dir === 2) y += 20;
-      else if (dir === 3) x -= 20;
+        // Adjust coordinate system to fit the fixed grid
+        const centerX = Math.floor(cols / 2);
+        const centerY = Math.floor(rows / 2);
 
-      ctx.lineTo(x, y);
+        for (let y = rows; y >= 0; y--) {
+            for (let x = 0; x < cols; x++) {
+                const cell = document.createElement('div');
+                cell.classList.add('grid-cell');
+                
+                // Calculate actual grid coordinates
+                const gridX = x - centerX;
+                const gridY = y - centerY;
+                const coordString = `${gridX},${gridY}`;
+                
+                if (gridX === 0 && gridY === 0) {
+                    cell.classList.add('start');
+                } else if (gridX === finalX && gridY === finalY) {
+                    cell.classList.add('end');
+                } else if (path.has(coordString)) {
+                    cell.classList.add('path');
+                }
+
+                gridContainer.appendChild(cell);
+            }
+        }
     }
-  }
-
-  ctx.strokeStyle = "blue";
-  ctx.lineWidth = 2;
-  ctx.stroke();
-
-  // แสดงตำแหน่งสุดท้าย
-  output.textContent = `ตำแหน่งสุดท้าย: (${x - canvas.width/2}, ${-(y - canvas.height/2)})`;
-}
+});
