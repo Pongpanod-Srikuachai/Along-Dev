@@ -3,43 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All my accounts</title>
+    <title>Detail of movements</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
 <div class="screen-container">
-    <header class="header">
-        <span class="header-icon"><i class="fas fa-bars"></i></span>
-        <span class="header-text">All my accounts</span>
-        <span class="header-icon"><i class="fas fa-chart-bar"></i></span>
+    <header class="detail-header">
+        <div class="header" style="background: none;">
+            <a href="index.html" class="header-icon" style="color: #fff;"><i class="fas fa-arrow-left"></i></a>
+            <span class="header-icon" style="color: #fff;"><i class="fas fa-camera"></i></span>
+        </div>
+        <div class="detail-balance">
+            <div class="detail-balance-label">Available Balance</div>
+            <div class="detail-balance-amount">$ 7,392.00</div>
+        </div>
     </header>
 
     <main>
-        <section class="visa-card-container">
-            <div class="visa-card">
-                <div class="card-header">
-                    <span class="card-type">VISA</span>
-                    <div class="available-balance">
-                        <div class="balance-label">Available Balance</div>
-                        <div class="balance-amount">$ 7,392.00</div>
-                    </div>
-                </div>
-                <div class="card-number">
-                    <span>42012</span>
-                    <span>3049</span>
-                    <span>2800</span>
-                    <span>9815</span>
-                </div>
-                <div class="card-details">
-                    <span>EXPIRE • 02/22</span>
-                    <span>CVC CODE • 230</span>
-                </div>
-            </div>
-        </section>
-
-        <section class="summary-container">
+        <section class="summary-container detail-summary">
             <div class="summary-box">
                 <div class="summary-label">Income</div>
                 <div class="summary-amount income">
@@ -55,9 +38,13 @@
         </section>
 
         <section>
-            <div class="transaction-header">
+            <div class="detail-movements-header">
                 <span>Detail of movements</span>
-                <a href="index.html"><i class="fas fa-file-invoice"></i></a>
+                <select class="weekly-dropdown">
+                    <option>Weekly</option>
+                    <option>Monthly</option>
+                    <option>Yearly</option>
+                </select>
             </div>
             <ul class="transaction-list">
                 <li class="transaction-item">
@@ -69,28 +56,36 @@
                     <div class="transaction-amount amount-expense">$170 <i class="fas fa-arrow-up"></i></div>
                 </li>
                 <li class="transaction-item">
-                    <div class="transaction-icon"><i class="fas fa-sack-dollar"></i></div>
+                    <div class="transaction-icon"><i class="fas fa-briefcase"></i></div>
                     <div class="transaction-details">
-                        <div class="transaction-name">Salary Deposit</div>
-                        <div class="transaction-date">June 1, 2018</div>
+                        <div class="transaction-name">Deposit Freelance</div>
+                        <div class="transaction-date">June 7, 2018</div>
                     </div>
-                    <div class="transaction-amount amount-income">$1,200 <i class="fas fa-arrow-down"></i></div>
+                    <div class="transaction-amount amount-income">$800 <i class="fas fa-arrow-down"></i></div>
                 </li>
                 <li class="transaction-item">
                     <div class="transaction-icon"><i class="fas fa-store"></i></div>
                     <div class="transaction-details">
                         <div class="transaction-name">Central Market</div>
-                        <div class="transaction-date">May 28, 2018</div>
+                        <div class="transaction-date">June 6, 2018</div>
                     </div>
                     <div class="transaction-amount amount-expense">$50 <i class="fas fa-arrow-up"></i></div>
+                </li>
+                <li class="transaction-item">
+                    <div class="transaction-icon"><i class="fas fa-sack-dollar"></i></div>
+                    <div class="transaction-details">
+                        <div class="transaction-name">Salary Deposit</div>
+                        <div class="transaction-date">June 1, 2018</div>
+                    </div>
+                    <div class="transaction-amount amount-income">$4,200 <i class="fas fa-arrow-down"></i></div>
                 </li>
                 <li class="transaction-item">
                     <div class="transaction-icon"><i class="fas fa-plane-departure"></i></div>
                     <div class="transaction-details">
                         <div class="transaction-name">Tickets</div>
-                        <div class="transaction-date">May 1, 2018</div>
+                        <div class="transaction-date">June 1, 2018</div>
                     </div>
-                    <div class="transaction-amount amount-expense">$1,200 <i class="fas fa-arrow-up"></i></div>
+                    <div class="transaction-amount amount-expense">$37 <i class="fas fa-arrow-up"></i></div>
                 </li>
             </ul>
         </section>
