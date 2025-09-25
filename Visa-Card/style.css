@@ -18,7 +18,7 @@ body {
     border-radius: 40px;
     overflow: hidden;
     margin: 20px 0;
-    min-height: 844px;
+    min-height: 844px; /* กำหนดความสูงเพื่อให้ดูเหมือนหน้าจอมือถือ */
 }
 
 .header {
@@ -31,19 +31,23 @@ body {
     top: 0;
     z-index: 10;
 }
+
 .header-text {
     font-size: 18px;
     font-weight: bold;
 }
+
 .header-icon {
     font-size: 24px;
     color: #666;
     cursor: pointer;
 }
 
+/* Visa Card Section */
 .visa-card-container {
     padding: 20px;
 }
+
 .visa-card {
     background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
     border-radius: 15px;
@@ -51,27 +55,33 @@ body {
     color: #fff;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
+
 .card-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
 }
+
 .card-type {
     font-weight: bold;
     font-size: 18px;
 }
+
 .available-balance {
     text-align: right;
 }
+
 .balance-label {
     font-size: 12px;
     opacity: 0.8;
 }
+
 .balance-amount {
     font-size: 24px;
     font-weight: bold;
 }
+
 .card-number {
     display: flex;
     justify-content: space-between;
@@ -79,6 +89,7 @@ body {
     letter-spacing: 2px;
     margin-bottom: 20px;
 }
+
 .card-details {
     display: flex;
     justify-content: space-between;
@@ -86,12 +97,14 @@ body {
     opacity: 0.8;
 }
 
+/* Income/Expense Section */
 .summary-container {
     display: flex;
     justify-content: space-around;
     padding: 0 20px;
     gap: 10px;
 }
+
 .summary-box {
     flex: 1;
     background-color: #f7f7f7;
@@ -99,22 +112,27 @@ body {
     padding: 15px;
     text-align: center;
 }
+
 .summary-label {
     font-size: 12px;
     color: #999;
     margin-bottom: 5px;
 }
+
 .summary-amount {
     font-size: 16px;
     font-weight: bold;
 }
+
 .income {
     color: #28a745;
 }
+
 .expense {
     color: #dc3545;
 }
 
+/* Transaction List Section */
 .transaction-header {
     display: flex;
     justify-content: space-between;
@@ -122,16 +140,19 @@ body {
     padding: 20px;
     font-weight: bold;
 }
+
 .transaction-list {
     list-style-type: none;
     padding: 0 20px 20px;
     margin: 0;
 }
+
 .transaction-item {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
 }
+
 .transaction-icon {
     width: 40px;
     height: 40px;
@@ -142,26 +163,38 @@ body {
     align-items: center;
     margin-right: 15px;
 }
+
+.transaction-icon img {
+    width: 20px;
+    height: 20px;
+}
+
 .transaction-details {
     flex-grow: 1;
 }
+
 .transaction-name {
     font-weight: bold;
 }
+
 .transaction-date {
     color: #999;
     font-size: 12px;
 }
+
 .transaction-amount {
     font-weight: bold;
 }
+
 .amount-income {
     color: #28a745;
 }
+
 .amount-expense {
     color: #dc3545;
 }
 
+/* Detail Page Specific Styles */
 .detail-header {
     background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
     color: #fff;
@@ -170,21 +203,26 @@ body {
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
 }
+
 .detail-balance-label {
     font-size: 14px;
     opacity: 0.8;
 }
+
 .detail-balance-amount {
     font-size: 32px;
     font-weight: bold;
     margin-top: 5px;
 }
+
 .detail-summary {
     padding: 20px;
 }
+
 .detail-summary .summary-box {
     flex: 1;
 }
+
 .detail-movements-header {
     display: flex;
     justify-content: space-between;
@@ -192,6 +230,7 @@ body {
     padding: 20px;
     font-weight: bold;
 }
+
 .weekly-dropdown {
     border: 1px solid #ddd;
     border-radius: 20px;
